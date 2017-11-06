@@ -12,7 +12,7 @@ If you plan to use **Entity Framework Core**, please checkout [Repository and un
 ##### Pre-reqs and Main Libraries
 - [.NET Framework 4.7 C# 7](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-7)
 - [Entity Framework 6](https://msdn.microsoft.com/en-us/library/aa937723(v=vs.113).aspx)
-- [SQL 2008 or above] (https://docs.microsoft.com/en-us/sql/)
+- [SQL 2008 or above](https://docs.microsoft.com/en-us/sql/)
 
 #### Steup
 1. Open the project/solution in Visual Studio, and open the console using the **Tools > **NuGet Package Manager** > **Package Manager Console command**
