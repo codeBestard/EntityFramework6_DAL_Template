@@ -34,7 +34,7 @@ namespace EntityFramework_6_DAL_Template.IntegrationTests
 
         [Fact( Skip = "demo only" )]
         //[Fact]
-        public void DepartmentWithMostEmployeeTest( )
+        public void GetDepartmentWithMostEmployeeTest( )
         {
             var guid = Guid.NewGuid();
 
@@ -46,6 +46,21 @@ namespace EntityFramework_6_DAL_Template.IntegrationTests
                 result.Should().BeGreaterThan( 0 );
             }
  
+        }
+
+        [Fact( Skip = "demo only" )]
+        //[Fact]
+        public void GetDepartmentsWithEmployeesTest()
+        {
+            var guid = Guid.NewGuid();
+
+            using( var unitOfWork = new UnitOfWork( new EFDbContext() ) )
+            {
+                var departmentRepository    = unitOfWork.GetRepository<DepartmentRepository , Department , int>();
+                var departmentWithEmployees = departmentRepository.GetDepartmentsWithAllEmployees();
+                var result                  = departmentWithEmployees.First().Employees.Count();
+                result.Should().BeGreaterThan( 0 );
+            }
         }
 
         [Fact]

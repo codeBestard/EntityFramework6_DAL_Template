@@ -28,16 +28,16 @@ namespace EntityFramework_6_DAL_Template.Specifications
         }
 
 
-        public override Employee Get( int key )
-        {
-            if( key < 1 )
-            {
-                return EmptyModels.EmptyEmployee;
-            }
+        //public override Employee Get( int key )
+        //{
+        //    if( key < 1 )
+        //    {
+        //        return EmptyModels.EmptyEmployee;
+        //    }
 
-            var result = _employees.Find( key );
-            return ReferenceEquals( result , null ) ? EmptyModels.EmptyEmployee : result;
-        }
+        //    var result = _employees.Find( key );
+        //    return ReferenceEquals( result , null ) ? EmptyModels.EmptyEmployee : result;
+        //}
 
 
         /* Employee Repository Specified methods 

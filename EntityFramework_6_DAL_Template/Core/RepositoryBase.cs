@@ -52,7 +52,7 @@ namespace EntityFramework_6_DAL_Template.Core
         /// </summary>
         /// <param name="key">key for the entity</param>
         /// <returns>Entity</returns>
-        public abstract TEntity Get(TKey key);
+        //public abstract TEntity Get(TKey key);
 
         public virtual TEntity SingleOrDefault(Expression<Func<TEntity, bool>> predicate)
         {

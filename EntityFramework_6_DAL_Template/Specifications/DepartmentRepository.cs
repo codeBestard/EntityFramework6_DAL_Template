@@ -28,23 +28,23 @@ namespace EntityFramework_6_DAL_Template.Specifications
             return ReferenceEquals( result , null ) ? EmptyModels.EmptyDepartment : result;
         }
 
-        public override Department Get( int key )
-        {
-            if( key < 1 )
-            {
-                return EmptyModels.EmptyDepartment;
-            }
+        //public override Department Get( int key )
+        //{
+        //    if( key < 1 )
+        //    {
+        //        return EmptyModels.EmptyDepartment;
+        //    }
 
-            var result = _departments.Find( key );
-            return ReferenceEquals( result , null ) ? EmptyModels.EmptyDepartment : result;
-        }
+        //    var result = _departments.Find( key );
+        //    return ReferenceEquals( result , null ) ? EmptyModels.EmptyDepartment : result;
+        //}
 
 
         /* Department Repository Specified methods 
            =============================================================*/
         public IEnumerable<Department> GetDepartmentsWithAllEmployees( )
         {
-            return this._departments.Include("Employees").ToList();
+            return this._departments.Include(d => d.Employees).ToList();
         }
 
         public IEnumerable<Department> GetDepartmentsWithMostEmployees( )

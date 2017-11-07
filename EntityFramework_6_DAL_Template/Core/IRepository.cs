@@ -12,7 +12,7 @@ namespace EntityFramework_6_DAL_Template.Core
         IEnumerable<TEntity> GetRange(int skipCount, int takeCount);
         IEnumerable<TEntity> GetAll();
         IEnumerable<TEntity> Find(Expression<Func<TEntity, bool>> predicate);
-        TEntity Get( TKey key );
+        //TEntity Get( TKey key );
 
 
 
