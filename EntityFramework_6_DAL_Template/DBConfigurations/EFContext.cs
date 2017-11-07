@@ -5,9 +5,9 @@ using EntityFramework_6_DAL_Template.Models;
 
 namespace EntityFramework_6_DAL_Template.DBConfigurations
 {
-    public class EFContext : DbContext, IDbContext
+    public class EFDbContext : DbContext, IDbContext
     {
-        public EFContext()
+        public EFDbContext( )
             : base("name=EFContext")
         {
             this.Configuration.LazyLoadingEnabled = false;

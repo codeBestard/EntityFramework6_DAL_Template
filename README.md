@@ -1,7 +1,6 @@
 # Entity Framework 6 DAL Template
 Generic Repository and Unit of Work Pattern With Entity Framework 6
 
-**Testing projects are coming soon...**
 
 #### Introduction
 The Repository Pattern is one of the most popular patterns in an N Layered application. An example of N layer system may consists of Presentation Layer, Service layoer, Business Layer and Data Access Layer. The Repository is an abstraction on top of the Data Access layer. Using Repository/Unit of work pattern, we can hide EF implementation from business layer, and thus it makes our code more test friendly.

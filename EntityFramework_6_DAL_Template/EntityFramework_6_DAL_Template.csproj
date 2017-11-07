@@ -63,6 +63,11 @@
     <Compile Include="Core\RepositoryBase.cs" />
     <Compile Include="Specifications\DepartmentRepository.cs" />
     <Compile Include="Specifications\EmployeeRepository.cs" />
+    <Compile Include="TestingClasses\TestDbAsyncEnumerator.cs" />
+    <Compile Include="TestingClasses\TestDbAsyncQueryProvider.cs" />
+    <Compile Include="TestingClasses\TestDbAsyncEnumerable.cs" />
+    <Compile Include="TestingClasses\TestDbContext.cs" />
+    <Compile Include="TestingClasses\TestDbSet.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

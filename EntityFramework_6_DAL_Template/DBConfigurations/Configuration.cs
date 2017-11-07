@@ -5,14 +5,14 @@ using EntityFramework_6_DAL_Template.Models;
 
 namespace EntityFramework_6_DAL_Template.DBConfigurations
 {
-    public sealed class Configuration : DbMigrationsConfiguration<EFContext>
+    public sealed class Configuration : DbMigrationsConfiguration<EFDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
             
         }
-        protected override void Seed(EFContext context)
+        protected override void Seed( EFDbContext dbContext )
         {
             #region Add Department
             var departments = new List<Department>
@@ -35,7 +35,7 @@ namespace EntityFramework_6_DAL_Template.DBConfigurations
             };
 
             foreach (var department in departments)
-                context.Departments.AddOrUpdate(d => d.Id, department);
+                dbContext.Departments.AddOrUpdate(d => d.Id, department);
             #endregion
             
 
@@ -89,7 +89,7 @@ namespace EntityFramework_6_DAL_Template.DBConfigurations
             };
 
             foreach (var employee in employees)
-                context.Employees.AddOrUpdate(e => e.Id, employee);
+                dbContext.Employees.AddOrUpdate(e => e.Id, employee);
             #endregion
 
         }

@@ -47,6 +47,11 @@ namespace EntityFramework_6_DAL_Template.Core
             return result;
         }
 
+        /// <summary>
+        /// Each Repository should have its own implementation on how to resolve the Keys
+        /// </summary>
+        /// <param name="key">key for the entity</param>
+        /// <returns>Entity</returns>
         public abstract TEntity Get(TKey key);
 
         public virtual TEntity SingleOrDefault(Expression<Func<TEntity, bool>> predicate)

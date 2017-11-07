@@ -44,13 +44,13 @@ namespace EntityFramework_6_DAL_Template.Specifications
            =============================================================*/
         public IEnumerable<Department> GetDepartmentsWithAllEmployees( )
         {
-            return this._departments.Include(d => d.Employees);
+            return this._departments.Include("Employees").ToList();
         }
 
         public IEnumerable<Department> GetDepartmentsWithMostEmployees( )
         {
             var group = this._departments.GroupBy(d => d.Employees.Count)
-                                          .OrderByDescending(g => g.Key).ToArray();
+                                         .OrderByDescending(g => g.Key).ToArray();
 
             var result = group.Any() ? group.First() : Enumerable.Empty<Department>();
             return result;

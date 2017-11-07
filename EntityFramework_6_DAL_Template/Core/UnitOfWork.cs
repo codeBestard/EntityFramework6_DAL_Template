@@ -10,8 +10,7 @@ namespace EntityFramework_6_DAL_Template.Core
 {
     public sealed class UnitOfWork : IUnitOfWork
     {
-
-        private static readonly IDictionary<Type , object> _allRepositories = new Dictionary<Type, object>();
+        private readonly IDictionary<Type , object> _allRepositories = new Dictionary<Type, object>();
 
         private IDbContext _dbContext;
 
@@ -22,7 +21,9 @@ namespace EntityFramework_6_DAL_Template.Core
             this._dbContext = dbContext;
         }
 
-        public TRepository GetRepository<TRepository>( ) where TRepository : class
+        public TRepository GetRepository<TRepository, TEntity, TKey>( ) 
+            where TRepository : class, IRepository<TEntity, TKey>
+            where TEntity: class
         {
             var type   = typeof(TRepository);
 
